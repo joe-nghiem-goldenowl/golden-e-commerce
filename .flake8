@@ -1,0 +1,13 @@
+[flake8]
+max-line-length = 120
+exclude = .git,__pycache__,migrations,venv, golden_e_commerce/settings.py
+
+[flake8.plugins]
+django = enabled = true
+
+[flake8.report]
+show_source = true
+statistics = true
+
+[flake8.options]
+max-complexity = 10
