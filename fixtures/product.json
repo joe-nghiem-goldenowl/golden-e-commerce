@@ -1,0 +1,628 @@
+[
+{
+    "model": "product.category",
+    "pk": 1,
+    "fields": {
+        "name": "Dresses"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 2,
+    "fields": {
+        "name": "Shirts"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 3,
+    "fields": {
+        "name": "Jeans"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 4,
+    "fields": {
+        "name": "Swimwear"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 5,
+    "fields": {
+        "name": "Sleepwear"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 6,
+    "fields": {
+        "name": "Sportswear"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 7,
+    "fields": {
+        "name": "Jumpsuits"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 8,
+    "fields": {
+        "name": "Blazers"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 9,
+    "fields": {
+        "name": "Jackets"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 10,
+    "fields": {
+        "name": "Shoes"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 3,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 1,
+        "created_at": "2023-11-11T10:57:22.535Z",
+        "updated_at": "2023-11-11T12:35:32.795Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 4,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 2,
+        "created_at": "2023-11-11T10:57:22.536Z",
+        "updated_at": "2023-11-11T12:35:32.801Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 5,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 3,
+        "created_at": "2023-11-11T10:57:22.538Z",
+        "updated_at": "2023-11-11T12:35:32.802Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 6,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 4,
+        "created_at": "2023-11-11T10:57:22.539Z",
+        "updated_at": "2023-11-11T12:35:32.803Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 7,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 5,
+        "created_at": "2023-11-11T10:57:22.540Z",
+        "updated_at": "2023-11-11T12:35:32.805Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 8,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 6,
+        "created_at": "2023-11-11T10:57:22.541Z",
+        "updated_at": "2023-11-11T12:35:32.806Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 9,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 7,
+        "created_at": "2023-11-11T10:57:22.543Z",
+        "updated_at": "2023-11-11T12:35:32.807Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 10,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 8,
+        "created_at": "2023-11-11T10:57:22.544Z",
+        "updated_at": "2023-11-11T12:35:32.808Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 11,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 9,
+        "created_at": "2023-11-11T10:57:22.545Z",
+        "updated_at": "2023-11-11T12:35:32.810Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 12,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 10,
+        "created_at": "2023-11-11T10:57:22.546Z",
+        "updated_at": "2023-11-11T12:35:32.811Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 13,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 1,
+        "created_at": "2023-11-11T10:57:22.547Z",
+        "updated_at": "2023-11-11T12:35:32.814Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 14,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 2,
+        "created_at": "2023-11-11T10:57:22.553Z",
+        "updated_at": "2023-11-11T12:35:32.817Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 15,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 3,
+        "created_at": "2023-11-11T10:57:22.556Z",
+        "updated_at": "2023-11-11T12:35:32.818Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 16,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 4,
+        "created_at": "2023-11-11T10:57:22.558Z",
+        "updated_at": "2023-11-11T12:35:32.819Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 17,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 5,
+        "created_at": "2023-11-11T10:57:22.559Z",
+        "updated_at": "2023-11-11T12:35:32.820Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 18,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 6,
+        "created_at": "2023-11-11T10:57:22.560Z",
+        "updated_at": "2023-11-11T12:35:32.822Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 19,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 7,
+        "created_at": "2023-11-11T10:57:22.561Z",
+        "updated_at": "2023-11-11T12:35:32.824Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 20,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 8,
+        "created_at": "2023-11-11T10:57:22.563Z",
+        "updated_at": "2023-11-11T12:35:32.825Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 21,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 9,
+        "created_at": "2023-11-11T10:57:22.564Z",
+        "updated_at": "2023-11-11T12:35:32.826Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 22,
+    "fields": {
+        "name": "abc",
+        "description": "",
+        "additional_description": "",
+        "additional_info": "",
+        "price": 100,
+        "star": "0.0",
+        "is_active": true,
+        "discount": "5.0",
+        "category": 10,
+        "created_at": "2023-11-11T10:57:22.565Z",
+        "updated_at": "2023-11-11T12:35:32.831Z"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 22,
+    "fields": {
+        "product": 3,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 23,
+    "fields": {
+        "product": 4,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 24,
+    "fields": {
+        "product": 5,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 25,
+    "fields": {
+        "product": 6,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 26,
+    "fields": {
+        "product": 7,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 27,
+    "fields": {
+        "product": 8,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 28,
+    "fields": {
+        "product": 9,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 29,
+    "fields": {
+        "product": 10,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 30,
+    "fields": {
+        "product": 11,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 31,
+    "fields": {
+        "product": 12,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 32,
+    "fields": {
+        "product": 13,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 33,
+    "fields": {
+        "product": 14,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 34,
+    "fields": {
+        "product": 15,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 35,
+    "fields": {
+        "product": 16,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 36,
+    "fields": {
+        "product": 17,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 37,
+    "fields": {
+        "product": 18,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 38,
+    "fields": {
+        "product": 19,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 39,
+    "fields": {
+        "product": 20,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 40,
+    "fields": {
+        "product": 21,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 41,
+    "fields": {
+        "product": 22,
+        "image_url": "img/product-1.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 42,
+    "fields": {
+        "product": 3,
+        "image_url": "img/product-2.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 43,
+    "fields": {
+        "product": 3,
+        "image_url": "img/product-3.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 44,
+    "fields": {
+        "product": 3,
+        "image_url": "img/product-4.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 45,
+    "fields": {
+        "product": 3,
+        "image_url": "img/product-5.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 46,
+    "fields": {
+        "product": 3,
+        "image_url": "img/product-6.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 47,
+    "fields": {
+        "product": 3,
+        "image_url": "img/product-7.jpg"
+    }
+},
+{
+    "model": "product.image",
+    "pk": 48,
+    "fields": {
+        "product": 3,
+        "image_url": "img/product-8.jpg"
+    }
+}
+]

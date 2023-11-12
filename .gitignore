@@ -44,3 +44,4 @@ db.sqlite3
 sqlite.db
 
 .DS_Store
+static_root

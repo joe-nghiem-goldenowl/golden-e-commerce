@@ -1,0 +1,12 @@
+[
+{
+    "model": "authentication.customer",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "bio": "",
+        "birth_date": "2000-03-15",
+        "address": ""
+    }
+}
+]

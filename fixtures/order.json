@@ -1,0 +1,44 @@
+[
+{
+    "model": "order.order",
+    "pk": 1,
+    "fields": {
+        "customer": 1,
+        "is_paid": false,
+        "total_price": "0.0"
+    }
+},
+{
+    "model": "order.producttype",
+    "pk": 1,
+    "fields": {
+        "order": 1,
+        "product": 3,
+        "quantity": 5,
+        "size": "M",
+        "color": "RED"
+    }
+},
+{
+    "model": "order.producttype",
+    "pk": 2,
+    "fields": {
+        "order": 1,
+        "product": 3,
+        "quantity": 2,
+        "size": "M",
+        "color": "RED"
+    }
+},
+{
+    "model": "order.producttype",
+    "pk": 3,
+    "fields": {
+        "order": 1,
+        "product": 3,
+        "quantity": 12,
+        "size": "M",
+        "color": "RED"
+    }
+}
+]

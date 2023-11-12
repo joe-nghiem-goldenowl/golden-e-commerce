@@ -21,6 +21,9 @@ class Order(models.Model):
     def calculate_total_order_price_with_shipping_fee(self):
         return self.calculate_total_order_price() + + self.SHIPPING_FEE
 
+    class Meta:
+        db_table = "order"
+
 class ProductType(models.Model):
     SIZE_CHOICES = [
         ("XS", "XS"),
@@ -51,3 +54,6 @@ class ProductType(models.Model):
 
     def calculate_total_price(self):
         return self.quantity * self.product.price
+
+    class Meta:
+        db_table = "product_type"
