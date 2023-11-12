@@ -51,7 +51,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "authentication",
-    "product"
+    "product",
+    "order",
+    "review"
 ]
 
 MIDDLEWARE = [

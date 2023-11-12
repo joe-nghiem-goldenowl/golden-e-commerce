@@ -9,37 +9,15 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    SIZE_CHOICES = [
-        ("XS", "XS"),
-        ("S", "S"),
-        ("M", "M"),
-        ("ML", "ML"),
-        ("XL", "XL"),
-    ]
-    COLOR_CHOICES =[
-        ("BLACK", "Black"),
-        ("WHITE", "White"),
-        ("RED", "Red"),
-        ("BLUE", "Blue"),
-        ("GREEN", "Green"),
-    ]
     name = models.CharField(max_length=255)
     description = models.TextField()
     additional_description = models.TextField()
     additional_info = models.TextField()
     price = models.IntegerField(default=0)
-    size = models.CharField(
-        choices=SIZE_CHOICES,
-        default="M",
-    )
-    color = models.CharField(
-        choices=COLOR_CHOICES,
-        default="RED",
-    )
+    star = models.DecimalField(max_digits=2, decimal_places=1, default=0)
     is_active = models.BooleanField(default=True)
-    discount = models.IntegerField(default=0)
+    discount = models.DecimalField(max_digits=2, decimal_places=1, default=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
