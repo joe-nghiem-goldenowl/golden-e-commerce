@@ -9,7 +9,7 @@
   <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
       <h1 class="font-weight-semi-bold text-uppercase mb-3">Shopping Cart</h1>
       <div class="d-inline-flex">
-          <p class="m-0"><a href="">Home</a></p>
+          <p class="m-0"><a href="{% url 'index' %}">Home</a></p>
           <p class="m-0 px-2">-</p>
           <p class="m-0">Shopping Cart</p>
       </div>
@@ -34,9 +34,9 @@
               <tbody class="align-middle">
                 {% if order %}
                   {% for product_type in order.producttype_set.all %}
-                    <tr>
+                    <tr class="product-type-row product-type-row-{{product_type.id}}">
                       <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;">{{product_type.product.name}}</td>
-                      <td class="align-middle">${{product_type.product.price}}</td>
+                      <td class="align-middle product-price">${{product_type.product.price}}</td>
                       <td class="align-middle">
                           <div class="input-group quantity mx-auto" style="width: 100px;">
                               <div class="input-group-btn">
@@ -44,7 +44,7 @@
                                   <i class="fa fa-minus"></i>
                                   </button>
                               </div>
-                              <input type="text" class="form-control form-control-sm bg-secondary text-center" value="{{product_type.quantity}}">
+                              <input type="text" class="form-control form-control-sm bg-secondary text-center product-quantity" value="{{product_type.quantity}}">
                               <div class="input-group-btn">
                                   <button class="btn btn-sm btn-primary btn-plus">
                                       <i class="fa fa-plus"></i>
@@ -52,8 +52,8 @@
                               </div>
                           </div>
                       </td>
-                      <td class="align-middle">${{product_type.calculate_total_price}}</td>
-                      <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                      <td class="align-middle total-price">${{product_type.calculate_total_price}}</td>
+                      <td class="align-middle"><button class="btn btn-sm btn-primary" onclick="removeProduct('{{product_type.id}}');updateTotalPrice();"><i class="fa fa-times"></i></button></td>
                     </tr>
                   {% endfor %}
                 {% endif %}
@@ -76,7 +76,7 @@
               <div class="card-body">
                   <div class="d-flex justify-content-between mb-3 pt-1">
                       <h6 class="font-weight-medium">Subtotal</h6>
-                      <h6 class="font-weight-medium">$
+                      <h6 class="font-weight-medium" id="subtotal">$
                         {% if order %}
                           {{order.calculate_total_order_price}}
                         {% else %}
@@ -86,19 +86,13 @@
                   </div>
                   <div class="d-flex justify-content-between">
                       <h6 class="font-weight-medium">Shipping</h6>
-                      <h6 class="font-weight-medium">$
-                        {% if order %}
-                          {{order.SHIPPING_FEE}}
-                        {% else %}
-                          0
-                        {% endif %}
-                      </h6>
+                      <h6 class="font-weight-medium" id="shipping">${% if order %}{{order.SHIPPING_FEE}}{% else %}0{% endif %}</h6>
                   </div>
               </div>
               <div class="card-footer border-secondary bg-transparent">
                   <div class="d-flex justify-content-between mt-2">
                       <h5 class="font-weight-bold">Total</h5>
-                      <h5 class="font-weight-bold">$
+                      <h5 class="font-weight-bold" id="total-order">$
                         {% if order %}
                           {{order.calculate_total_order_price_with_shipping_fee}}
                         {% else %}
@@ -106,12 +100,35 @@
                         {% endif %}
                       </h5>
                   </div>
-                  <button class="btn btn-block btn-primary my-3 py-3" {% if not order %}disabled{% endif %} >Proceed To Checkout</button>
+                  <button class="btn btn-block btn-primary my-3 py-3 proceed-btn" {% if not order %}disabled{% endif %} >Proceed To Checkout</button>
               </div>
           </div>
       </div>
   </div>
 </div>
 <!-- Cart End -->
+
+<script>
+  const removeProduct = (productId) => $(`.product-type-row-${productId}`).remove()
+  function updateTotalPrice() {
+    let subTotal = 0
+    let total = 0
+    $(".product-type-row").each((index, element) => {
+      // const productPrice = $(element).find(".product-price").text().substring(1)
+      // const productQuantity = $(element).find(".product-quantity").val()
+      const totalPrice = $(element).find(".total-price").text().substring(1)
+      subTotal += parseInt(totalPrice)
+    })
+    $("#subtotal").text(`$${subTotal}`)
+    const shipping = parseInt($("#shipping").text().substring(1))
+    total = subTotal + shipping
+
+    $("#total-order").text(total)
+
+    if(subTotal === 0) $(".proceed-btn").prop("disabled", true)
+
+
+  }
+</script>
 
 {% endblock %}

@@ -1,8 +1,10 @@
 from django.db import models
-from product.models import Product
+
 from authentication.models import Customer
+from product.models import Product
 
 # Create your models here.
+
 
 class Order(models.Model):
     SHIPPING_FEE = 15
@@ -19,10 +21,11 @@ class Order(models.Model):
         return total_price
 
     def calculate_total_order_price_with_shipping_fee(self):
-        return self.calculate_total_order_price() + + self.SHIPPING_FEE
+        return self.calculate_total_order_price() + +self.SHIPPING_FEE
 
     class Meta:
         db_table = "order"
+
 
 class ProductType(models.Model):
     SIZE_CHOICES = [
@@ -32,7 +35,7 @@ class ProductType(models.Model):
         ("ML", "ML"),
         ("XL", "XL"),
     ]
-    COLOR_CHOICES =[
+    COLOR_CHOICES = [
         ("BLACK", "Black"),
         ("WHITE", "White"),
         ("RED", "Red"),
