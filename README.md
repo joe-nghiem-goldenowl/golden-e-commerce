@@ -33,8 +33,12 @@ python manage.py runserver
 `python manage.py test`
 
 ## Load seed data
-
-`python manage.py loaddata fixtures/data.json`
+```
+python manage.py loaddata fixtures/authentication.json --app authentication
+python manage.py loaddata fixtures/order.json --app order
+python manage.py loaddata fixtures/product.json --app product
+python manage.py loaddata fixtures/review.json --app review
+```
 
 ## Run docker
 

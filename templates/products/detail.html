@@ -54,50 +54,50 @@
           <p class="mb-4">{{product.description}}</p>
           <div class="d-flex mb-3">
               <p class="text-dark font-weight-medium mb-0 mr-3">Sizes:</p>
-              <form>
+              <form id="product-size">
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" class="custom-control-input" id="size-1" name="size">
+                      <input type="radio" class="custom-control-input" id="size-1" name="size" value="XS">
                       <label class="custom-control-label" for="size-1">XS</label>
                   </div>
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" class="custom-control-input" id="size-2" name="size">
+                      <input type="radio" class="custom-control-input" id="size-2" name="size" value="S">
                       <label class="custom-control-label" for="size-2">S</label>
                   </div>
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" class="custom-control-input" id="size-3" name="size">
+                      <input type="radio" class="custom-control-input" id="size-3" name="size" value="M" checked>
                       <label class="custom-control-label" for="size-3">M</label>
                   </div>
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" class="custom-control-input" id="size-4" name="size">
+                      <input type="radio" class="custom-control-input" id="size-4" name="size" value="L">
                       <label class="custom-control-label" for="size-4">L</label>
                   </div>
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" class="custom-control-input" id="size-5" name="size">
+                      <input type="radio" class="custom-control-input" id="size-5" name="size" value="XL">
                       <label class="custom-control-label" for="size-5">XL</label>
                   </div>
               </form>
           </div>
           <div class="d-flex mb-4">
               <p class="text-dark font-weight-medium mb-0 mr-3">Colors:</p>
-              <form>
+              <form id="product-color">
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" class="custom-control-input" id="color-1" name="color">
+                      <input type="radio" class="custom-control-input" id="color-1" name="color" value="BLACK" checked>
                       <label class="custom-control-label" for="color-1">Black</label>
                   </div>
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" class="custom-control-input" id="color-2" name="color">
+                      <input type="radio" class="custom-control-input" id="color-2" name="color" value="WHITE">
                       <label class="custom-control-label" for="color-2">White</label>
                   </div>
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" class="custom-control-input" id="color-3" name="color">
+                      <input type="radio" class="custom-control-input" id="color-3" name="color" value="RED">
                       <label class="custom-control-label" for="color-3">Red</label>
                   </div>
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" class="custom-control-input" id="color-4" name="color">
+                      <input type="radio" class="custom-control-input" id="color-4" name="color" value="BLUE">
                       <label class="custom-control-label" for="color-4">Blue</label>
                   </div>
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" class="custom-control-input" id="color-5" name="color">
+                      <input type="radio" class="custom-control-input" id="color-5" name="color" value="GREEN">
                       <label class="custom-control-label" for="color-5">Green</label>
                   </div>
               </form>
@@ -109,14 +109,14 @@
                       <i class="fa fa-minus"></i>
                       </button>
                   </div>
-                  <input type="text" class="form-control bg-secondary text-center" value="1">
+                  <input id="product-quantity" type="text" class="form-control bg-secondary text-center" value="1">
                   <div class="input-group-btn">
                       <button class="btn btn-primary btn-plus">
                           <i class="fa fa-plus"></i>
                       </button>
                   </div>
               </div>
-              <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button>
+              <button class="btn btn-primary px-3" onclick="addToCart('{{product.id}}')"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button>
           </div>
           <div class="d-flex pt-2">
               <p class="text-dark font-weight-medium mb-0 mr-2">Share on:</p>
@@ -337,5 +337,30 @@
 </div>
 <!-- Products End -->
 
+<script>
+  const addToCart = (productId) => {
+    const productQuantity = $("#product-quantity").val()
+    const productColor = $("#product-color input[type='radio']:checked").val()
+    const productSize = $("#product-size input[type='radio']:checked").val()
+
+    $.ajax({
+      url: "{% url 'add-to-cart' %}",
+      data: {
+        product_id: productId,
+        product_quantity: productQuantity,
+        product_color: productColor,
+        product_size: productSize
+      },
+      dataType: 'json',
+      success: function(data) {
+        if(data.message === "success") {
+          window.location.href = "{% url 'cart' %}"
+        } else {
+          alert("Add to cart failed")
+        }
+      }
+    })
+  }
+</script>
 
 {% endblock %}
