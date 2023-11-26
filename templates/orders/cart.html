@@ -40,20 +40,20 @@
                       <td class="align-middle">
                           <div class="input-group quantity mx-auto" style="width: 100px;">
                               <div class="input-group-btn">
-                                  <button class="btn btn-sm btn-primary btn-minus" >
+                                  <button class="btn btn-sm btn-primary btn-minus" onclick="updateTotalPrice('{{product_type.id}}', false);updateTotalOrder();">
                                   <i class="fa fa-minus"></i>
                                   </button>
                               </div>
                               <input type="text" class="form-control form-control-sm bg-secondary text-center product-quantity" value="{{product_type.quantity}}">
                               <div class="input-group-btn">
-                                  <button class="btn btn-sm btn-primary btn-plus">
+                                  <button class="btn btn-sm btn-primary btn-plus" onclick="updateTotalPrice('{{product_type.id}}', true);updateTotalOrder();">
                                       <i class="fa fa-plus"></i>
                                   </button>
                               </div>
                           </div>
                       </td>
                       <td class="align-middle total-price">${{product_type.calculate_total_price}}</td>
-                      <td class="align-middle"><button class="btn btn-sm btn-primary" onclick="removeProduct('{{product_type.id}}');updateTotalPrice();"><i class="fa fa-times"></i></button></td>
+                      <td class="align-middle"><button class="btn btn-sm btn-primary" onclick="removeProduct('{{product_type.id}}');updateTotalOrder();"><i class="fa fa-times"></i></button></td>
                     </tr>
                   {% endfor %}
                 {% endif %}
@@ -110,7 +110,7 @@
 
 <script>
   const removeProduct = (productId) => $(`.product-type-row-${productId}`).remove()
-  function updateTotalPrice() {
+  const updateTotalOrder = () => {
     let subTotal = 0
     let total = 0
     $(".product-type-row").each((index, element) => {
@@ -126,8 +126,18 @@
     $("#total-order").text(total)
 
     if(subTotal === 0) $(".proceed-btn").prop("disabled", true)
+  }
 
+  const updateTotalPrice = (productTypeId, isPlus = true) => {
+    const productPrice = $(`.product-type-row-${productTypeId}`).find(".product-price").text().substring(1)
+    let productQuantity = $(`.product-type-row-${productTypeId}`).find(".product-quantity").val()
+    productQuantity = isPlus ? parseInt(productQuantity) + 1 : parseInt(productQuantity) - 1
 
+    if(productQuantity < 0) productQuantity = 0
+    const totalPrice = parseInt(productPrice)*parseInt(productQuantity)
+    let totalPriceElement = $(`.product-type-row-${productTypeId}`).find(".total-price")
+
+    totalPriceElement.text(`$${totalPrice}`)
   }
 </script>
 

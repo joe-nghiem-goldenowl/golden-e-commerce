@@ -25,4 +25,5 @@ urlpatterns = [
     path("register/", RegisterView.as_view(), name="register"),
     path("", include("product.urls")),
     path("order/", include("order.urls")),
+    path("contact/", include("contact.urls")),
 ]
